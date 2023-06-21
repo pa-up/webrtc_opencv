@@ -1,0 +1,4 @@
+Flask
+flask-socketio
+Gunicorn
+opencv-python-headless==4.7.0.72
