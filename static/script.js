@@ -8,7 +8,7 @@ async function initializeCamera() {
             inputVideo.play();
             setInterval(() => {
                 sendFrameToServer(inputVideo);
-            }, 100);
+            }, 200);
         });
     } catch (err) {
         console.error('Error accessing camera: ', err);
@@ -21,8 +21,8 @@ async function initializeCamera() {
 
 function sendFrameToServer(video) {
     const canvas = document.createElement('canvas');
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    canvas.width = video.videoWidth ;
+    canvas.height = video.videoHeight  ;
     const ctx = canvas.getContext('2d');
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     const data = canvas.toDataURL('image/jpeg', 0.8).split(',')[1];
